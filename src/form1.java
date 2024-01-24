@@ -68,6 +68,132 @@ public class form1 {
         });
         System.out.println("ff");
 
-        
+        // Boton del Seno
+        button11.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Obtener el valor del campo de texto
+                    String n1 = text_1.getText();
+
+                    // Validar si el input es un número
+                    if (n1.matches("-?\\d+(\\.\\d+)?")) {
+                        double numero1 = Double.parseDouble(n1);
+
+                        // Realizar la operación
+                        double resul1 = Math.sin(Math.toRadians(numero1));
+
+                        // Resultado con decimales
+                        String r1 = String.format("%.2f", resul1);
+                        text_3.setText(r1);
+                    } else {
+                        // Mostrar mensaje de error si no es un número válido
+                        text_3.setText("Error: Ingrese un número válido");
+                    }
+                } catch (Exception ex) {
+                    // Capturar excepciones generales y mostrar mensaje de error
+                    text_3.setText("Error: " + ex.getMessage());
+                }
+            }
+        });
+
+        // Boton del coseno
+        button12.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Obtener el valor del campo de texto
+                    String n1 = text_1.getText();
+
+                    // Validar si el input es un número
+                    if (n1.matches("-?\\d+(\\.\\d+)?")) {
+                        double numero1 = Double.parseDouble(n1);
+
+                        // Realizar la operación
+                        double resul1 = Math.cos(Math.toRadians(numero1));
+
+                        // Resultado con decimales
+                        String r1 = String.format("%.2f", resul1);
+                        text_3.setText(r1);
+                    } else {
+                        // Mostrar mensaje de error si no es un número válido
+                        text_3.setText("Error: Ingrese un número válido");
+                    }
+                } catch (Exception ex) {
+                    // Capturar excepciones generales y mostrar mensaje de error
+                    text_3.setText("Error: " + ex.getMessage());
+                }
+            }
+        });
+
+        //Boton de la Tangente
+        button13.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Obtener el valor del campo de texto
+                    String n1 = text_1.getText();
+
+                    // Validar si el input es un número
+                    if (n1.matches("-?\\d+(\\.\\d+)?")) {
+                        double numero1 = Double.parseDouble(n1);
+
+                        // Validar si el ángulo es un múltiplo de 90 grados
+                        if (Math.abs(numero1 % 90) == 0) {
+                            text_3.setText("Error: Tangente indefinida para ángulos de 90 y 270 grados");
+                        } else {
+                            // Realizar la operación
+                            double resul1 = Math.tan(Math.toRadians(numero1));
+
+                            // Resultado con decimales
+                            String r1 = String.format("%.2f", resul1);
+                            text_3.setText("Resultado: " + r1);
+                        }
+                    } else {
+                        // Mostrar mensaje de error si no es un número válido
+                        text_3.setText("Error: Ingrese un número válido");
+                    }
+                } catch (Exception ex) {
+                    // Capturar excepciones generales y mostrar mensaje de error
+                    text_3.setText("Error: " + ex.getMessage());
+                }
+            }
+        });
+
+        // Boton de la Secante
+        button14.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Obtener el valor del campo de texto
+                    String n1 = text_1.getText();
+
+                    // Validar si el input es un número
+                    if (n1.matches("-?\\d+(\\.\\d+)?")) {
+                        double numero1 = Double.parseDouble(n1);
+
+                        // Validar si el ángulo es un múltiplo de 90 grados
+                        if (Math.abs(numero1 % 90) == 0) {
+                            text_3.setText("Error: Tangente indefinida para ángulos de 90 y 270 grados");
+                        } else {
+                            // Realizar la operación
+                            double resul1 = 1 / Math.cos(Math.toRadians(numero1));
+
+                            // Resultado con decimales
+                            String r1 = String.format("%.2f", resul1);
+                            text_3.setText("Resultado: " + r1);
+                        }
+                    } else {
+                        // Mostrar mensaje de error si no es un número válido
+                        text_3.setText("Error: Ingrese un número válido");
+                    }
+                } catch (Exception ex) {
+                    // Capturar excepciones generales y mostrar mensaje de error
+                    text_3.setText("Error: " + ex.getMessage());
+                }
+            }
+        });
+
+
     }
 }
